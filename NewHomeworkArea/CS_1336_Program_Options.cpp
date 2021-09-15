@@ -14,7 +14,9 @@ int main() {
 
     // Put the switch statement here
     // Comment to test Commit
-    
+    // Comment to Test typing in Terminal On file    
+
+
     switch (optionFlag) {
         case 'a':
             std::cout << "Everything" << std::endl;
