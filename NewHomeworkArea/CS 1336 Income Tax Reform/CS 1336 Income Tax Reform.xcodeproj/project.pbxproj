@@ -6,10 +6,17 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXFileReference section */
+		BB01693326F269FD00686787 /* CS 1336 Income Tax Code.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "CS 1336 Income Tax Code.cpp"; sourceTree = "<group>"; };
+		BB01693426F269FD00686787 /* CS 1336 Income Tax Code.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "CS 1336 Income Tax Code.hpp"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		BB01692C26F269BE00686787 = {
 			isa = PBXGroup;
 			children = (
+				BB01693326F269FD00686787 /* CS 1336 Income Tax Code.cpp */,
+				BB01693426F269FD00686787 /* CS 1336 Income Tax Code.hpp */,
 			);
 			sourceTree = "<group>";
 		};
