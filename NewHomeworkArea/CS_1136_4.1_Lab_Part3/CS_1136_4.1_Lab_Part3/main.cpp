@@ -8,6 +8,8 @@
 // This program outputs a 12 x 12 Rectangle in an
 // upright position and a 13 Unit base Equilateral Triangle
 
+#include <iomanip>
+#include <ios>
 #include <iostream>
 
 int main()
