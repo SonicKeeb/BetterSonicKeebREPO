@@ -34,7 +34,7 @@ int main() {
     
     agi = wages + interest + unemployment;
    
-    std::cout << "AGI: $" << agi << endl;
+    std::cout << "AGI: $" << agi << std::endl;
    
     // Predefining at the start of the code that if agi is ever > 120000 it'll output the error message and stop outputting anything else after that because of return -1
     
