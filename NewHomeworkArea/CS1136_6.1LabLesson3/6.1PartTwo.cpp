@@ -26,7 +26,7 @@ cin >> dollars;
 // Outputting the bottom row of the table with the converted currencies and set the decimal place to two places
 
 cout << "        Dollars            Yen          Euros          Pesos" << endl;
-cout << "         " << fixed << setprecision(2) << dollars << "       " << (dollars * yen) << "          " << (euros * dollars) << "        " << (pesos * dollars) << endl;
+cout << "" << setw(15) << fixed << setprecision(2) << dollars << "" << setw(15) << (dollars * yen) << "" << setw(15) << (euros * dollars) << "" << setw(15) << (pesos * dollars) << endl;
 
 return 0;
 
