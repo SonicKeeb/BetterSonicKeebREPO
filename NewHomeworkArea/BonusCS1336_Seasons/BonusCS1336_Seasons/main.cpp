@@ -25,7 +25,7 @@ cin >> inputDay;
 // Winter: December 21 - March 19
 
 if (inputMonth == "March" || inputMonth == "April" || inputMonth == "May" || inputMonth == "June") {
-	if (inputDay >= 1 && inputDay <= 20) {
+	if (inputDay >= 4 && inputDay <= 20) {
 		cout << "Spring" << endl;
   }
 } else if (inputMonth == "June" || inputMonth == "July" || inputMonth == "August" || inputMonth == "September") {
