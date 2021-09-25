@@ -1,5 +1,5 @@
 //This program takes in a user's inputted mass in Kilograms and calculates
-// the weight in (N) of Earth, Moon, Venus.
+// the weight in Newton's of Earth, Moon, Venus.
 
 #include <iostream>
 #include <iomanip>
