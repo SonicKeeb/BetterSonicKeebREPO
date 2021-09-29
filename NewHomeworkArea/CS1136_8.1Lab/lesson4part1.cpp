@@ -31,7 +31,7 @@ if (mass <= 0) {
 	cout << "The mass must be greater than zero" << endl;
 	return -1;
 } else { 
-	return -1;
+	;
 }
 
 //Outputting location and weight prompt
