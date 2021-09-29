@@ -50,6 +50,13 @@ cout << "Earth" <<  setw(17) << fixed << setprecision(4) << earthWeight << endl;
 cout << "Moon" << setw(18) << fixed << setprecision(4) << moonWeight << endl;
 cout << "Venus" << setw(17) << fixed << setprecision(4) << venusWeight << endl;
 
+//Light or heavy
+if (earthWeight < 5) {
+	cout << "The object is light" << endl;
+} else if (earthWeight >= 1500) {
+	cout << "The object is heavy" << endl;
+}
+
 return 0;
 
 }
