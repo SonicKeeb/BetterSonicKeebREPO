@@ -23,8 +23,16 @@ double venusWeight;
 
 cout << "Enter the mass in kg" << endl;
 cin >> mass;
-cout << endl;
-cout << "The mass is " << mass << " kg" << endl;
+cout << "The mass is " << fixed << setprecision(4) << mass << " kg" << endl;
+
+//For if mass is every 0 or less
+
+if (mass <= 0) {
+	cout << "The mass must be greater than zero" << endl;
+	return -1;
+} else { 
+	return -1;
+}
 
 //Outputting location and weight prompt
 
