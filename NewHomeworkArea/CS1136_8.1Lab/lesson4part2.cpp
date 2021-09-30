@@ -20,14 +20,11 @@ seconds = (seconds % 86400) % 3600;
 minutes = seconds / 60;
 seconds = seconds % 60;
 
+
 if (seconds <= 0) {
 	cout << "Total seconds must be greater than zero" << endl;
 	return -1;
-} else { 
-	;
-}
-
-if (seconds > 0) {
+} else if (seconds > 0) {
 	if (days == 0) {
 		;
 	} else { 
@@ -47,7 +44,9 @@ if (seconds > 0) {
 		;
 	} else {
 	cout << seconds << " second(s)" << endl;
-	}
+ }
+} else {
+	;
 }
 return 0;
 }
