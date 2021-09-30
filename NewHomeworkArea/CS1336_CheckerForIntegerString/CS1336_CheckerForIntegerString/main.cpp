@@ -6,9 +6,26 @@
 //
 
 #include <iostream>
+#include <string>
+#include <typeinfo>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+using namespace std;
+
+int main() {
+   std::string userString;
+   
+   cin >> userString;
+   
+   int userStringLength = userString.length();
+   
+   for (int i = 0; i < userStringLength; i++){
+      if (!(userString[i] >= '0' && userString[i] <= '9')){
+         std::cout << "No" << std::endl;
+         return -1;
+      }
+   }
+   
+   std::cout << "Yes" << std::endl;
+   
+   return 0;
 }
