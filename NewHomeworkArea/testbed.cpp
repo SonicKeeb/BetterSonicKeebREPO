@@ -1,12 +1,16 @@
 #include <iostream>
+#include <string>
+#include <cmath>
 
 int main() {
 
-int myVar = 5;
-
-if ( myVar = myOtherVar ) {
-return true;
- } else {
-return false;
+std::string inputString;
+std::getline(std::cin, inputString);
+for ( int i=0; i<inputString.size();
+i++) {
+std::cout << (char)
+std::toupper(inputString.at(i));
 }
+std::cout << std::endl;
+
 }
