@@ -15,22 +15,16 @@ getline(cin, inputString);
 
 for (int i = inputString.size()-1; i >= 0; i--) {
 secondString = (char) (inputString.at(i));
-cout << secondString;
 }
-
-cout << endl;
 
 for (int i = 0; i < inputString.size(); i++) {
 originalString = (char) (inputString.at(i));
-cout << originalString;
 }
 
-cout << endl;
-
 if (originalString == secondString) {
-cout << "yes " << endl;
+cout << "palindrome: " << inputString << endl;
 } else {
-cout << "no " << endl;
+cout << "not a palindrome: " << inputString << endl;
 }
 
 /* if (originalString != secondString) {
