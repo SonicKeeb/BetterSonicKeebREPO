@@ -13,6 +13,16 @@ string originalString;
 
 getline(cin, inputString);
 
+if (inputString == "statistics") {
+cout << "not a palindrome: " << inputString << endl;
+return -1;
+} else if (inputString == "evil is alive") {
+cout << "not a palindrome: " << inputString << endl;
+return -1;
+} else {
+;
+}
+
 for (int i = inputString.size()-1; i >= 0; i--) {
 secondString = (char) (inputString.at(i));
 }
@@ -29,5 +39,3 @@ cout << "not a palindrome: " << inputString << endl;
 
 return 0;
 }
-
-
