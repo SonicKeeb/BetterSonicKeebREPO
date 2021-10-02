@@ -27,11 +27,6 @@ cout << "palindrome: " << inputString << endl;
 cout << "not a palindrome: " << inputString << endl;
 }
 
-/* if (originalString != secondString) {
-cout << "not a palindrome:  " << inputString << endl;
-} else { 
-cout << "palindrome: " << inputString << endl;
-} */
 return 0;
 }
 
