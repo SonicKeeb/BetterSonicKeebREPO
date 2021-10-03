@@ -7,6 +7,7 @@ int main() {
 int inputNumber;
 
 cin >> inputNumber;
+cout << inputNumber << "\t";
 
 while (inputNumber!= 1) {
 if (inputNumber % 2 != 0) {
@@ -16,5 +17,6 @@ inputNumber = inputNumber / 2;
 }
 cout << inputNumber << "\t";
 }
+cout << endl;
    return 0;
 }
