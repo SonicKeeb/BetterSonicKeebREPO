@@ -5,17 +5,16 @@ int main() {
 
    /* Type your code here. */
 int inputNumber;
-int num = 0;
 
 cin >> inputNumber;
 
-while (num != 1) {
-if (num % 2 != 0) {
-num = (inputNumber* 3) + 1;
+while (inputNumber!= 1) {
+if (inputNumber % 2 != 0) {
+inputNumber = (inputNumber * 3) + 1;
 } else {
-num = inputNumber / 2;
+inputNumber = inputNumber / 2;
 }
+cout << inputNumber << "\t";
 }
-cout << num << "\t";
    return 0;
 }
