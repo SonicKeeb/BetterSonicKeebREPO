@@ -7,7 +7,6 @@ int main() {
 
 int inputNumber;
 int count = 0;
-int num = 0;
 
 cin >> inputNumber;
 
