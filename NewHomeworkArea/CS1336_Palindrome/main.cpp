@@ -3,39 +3,33 @@
 #include <cctype>
 using namespace std;
 
-int main() {
-
    /* Type your code here. */
 
-string inputString;
-string secondString;
-string originalString;
+int main() {
 
-getline(cin, inputString);
+    string input;
+    getline(cin, input);
 
-if (inputString == "statistics") {
-cout << "not a palindrome: " << inputString << endl;
-return -1;
-} else if (inputString == "evil is alive") {
-cout << "not a palindrome: " << inputString << endl;
-return -1;
-} else {
-;
-}
+    string output, reverseOutput = "";
 
-for (int i = inputString.size()-1; i >= 0; i--) {
-secondString = (char) (inputString.at(i));
-}
+    int length = input.length();
 
-for (int i = 0; i < inputString.size(); i++) {
-originalString = (char) (inputString.at(i));
-}
+    for (int i = 0; i < length; i++){
+        if (input[i] == ' '){
+            i++;
+        }
+        output += input[i];
+    }
 
-if (originalString == secondString) {
-cout << "palindrome: " << inputString << endl;
-} else {
-cout << "not a palindrome: " << inputString << endl;
-}
+    for (int i = output.length() - 1; i >= 0; i--){
+        reverseOutput += output[i];
+    }
 
-return 0;
-}
+    if (!(output == reverseOutput)){
+        std::cout << "not a ";
+    }
+
+    std::cout << "palindrome: " << input << std::endl;
+
+    return 0;
+} 
