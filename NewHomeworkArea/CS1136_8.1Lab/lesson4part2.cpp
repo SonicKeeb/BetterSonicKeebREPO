@@ -14,39 +14,28 @@ cout << "Enter seconds" << endl;
 cin >> seconds;
 cout << "Total seconds: " << seconds << endl << endl;
 
-days = seconds / 86400;
-hours = (seconds % 86400) / 3600;
-seconds = (seconds % 86400) % 3600;
-minutes = seconds / 60;
-seconds = seconds % 60;
-
-
-if (seconds <= 0) {
+ if (seconds <= 0) {
 	cout << "Total seconds must be greater than zero" << endl;
 	return -1;
-} else if (seconds > 0) {
-	if (days == 0) {
-		;
-	} else { 
+
+}
+ 
+days = seconds / 86400;
+hours = (seconds % 86400) / 3600;
+minutes = ((seconds % 86400) % 3600) / 60;
+seconds = (((seconds % 86400) % 3600) % 60) % 60;
+	
+	if (days > 0) {
 	cout << days << " day(s)" << endl;
-	}
-	if (hours == 0) {
-		;
-	} else {
+	} 
+	if (hours > 0) {
 	cout << hours << " hour(s)" << endl;
 	}
-	if (minutes == 0) {
-		;
-	} else {
+	if (minutes > 0) {
 	cout << minutes << " minute(s)" << endl;
 	}
-	if (seconds == 0) {
-		;
-	} else {
+	if (seconds > 0) {
 	cout << seconds << " second(s)" << endl;
- }
-} else {
-	;
-}
+	}
 return 0;
 }
