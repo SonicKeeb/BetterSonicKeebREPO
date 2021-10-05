@@ -1,4 +1,6 @@
 #include <iostream>
+#define RED "\033[31m"
+#define GREEN "\033[32m"
 using namespace std;
 
 int main() {
@@ -12,7 +14,11 @@ cin >> inputNumber;
 
 while (inputNumber!= 1) {
 count++;
-cout << inputNumber << "\t";
+if (inputNumber % 2 != 0) {
+cout << RED << inputNumber << "\t";
+} else {
+cout << GREEN << inputNumber << "\t";
+}
 if (inputNumber / inputNumber == 1) {
 inputNumber = inputNumber;
 if (inputNumber % 2 != 0) {
