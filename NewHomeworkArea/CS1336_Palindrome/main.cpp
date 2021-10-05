@@ -16,7 +16,7 @@ int main() {
 
     for (int i = 0; i < length; i++){
         if (input[i] == ' '){
-            i++;
+            continue;
         }
         output += input[i];
     }
