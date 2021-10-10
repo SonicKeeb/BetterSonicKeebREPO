@@ -7,13 +7,13 @@ int main() {
 
    /* Type your code here. */
 
-int inputNumber;
-int count = 0;
+long long int inputNumber;
+long long int count = 0;
 
 cin >> inputNumber;
 
 if (!(inputNumber >= '0' && inputNumber <= '9')){
-         std::cout << "Not a number please input a number, hit ./a.out and ENTER and type another input" << std::endl;
+         cout << "Not a number please input a number, hit ./a.out and ENTER and type another input" << endl;
 	return -1;
       }
 
