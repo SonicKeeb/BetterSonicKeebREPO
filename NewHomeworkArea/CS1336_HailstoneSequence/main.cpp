@@ -12,6 +12,11 @@ int count = 0;
 
 cin >> inputNumber;
 
+if (!(inputNumber >= '0' && inputNumber <= '9')){
+         std::cout << "Not a number please input a number, hit ./a.out and ENTER and type another input" << std::endl;
+	return -1;
+      }
+
 while (inputNumber!= 1) {
 count++;
 if (inputNumber % 2 != 0) {
@@ -31,7 +36,7 @@ if (count % 10 == 0) {
 cout << endl;
 }
 }
-cout << inputNumber;
+cout << RED << inputNumber;
 cout << endl;
    return 0;
 }
