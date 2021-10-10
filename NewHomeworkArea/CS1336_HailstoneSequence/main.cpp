@@ -12,11 +12,6 @@ long long int count = 0;
 
 cin >> inputNumber;
 
-if (!(inputNumber >= '0' && inputNumber <= '9')){
-         cout << "Not a number please input a number, hit ./a.out and ENTER and type another input" << endl;
-	return -1;
-      }
-
 while (inputNumber!= 1) {
 count++;
 if (inputNumber % 2 != 0) {
