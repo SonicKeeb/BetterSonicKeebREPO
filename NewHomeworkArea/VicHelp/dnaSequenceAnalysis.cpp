@@ -3,7 +3,6 @@
 #include <string>
 using namespace std;
 
-
 int main() {
 
   int countTotal, countAdenine, countThymine, countCytosine, countGuanine = 0;
@@ -13,7 +12,7 @@ int main() {
   fileInput.open("dnaSequence.txt");
   if ( !fileInput.is_open()) {
     cerr << "File didn't open!" << std::endl;
-    exit(1);
+    exit(2);
   }
 
   ofstream fileOutput;
@@ -25,14 +24,12 @@ int main() {
 
   string dnaSequence;
   getline(fileInput, dnaSequence);
-  int stringLength = dnaSequence.length();
-  
-  while(getline(fileInput, dnaSequence)) {
-  for(int i = 0; i < stringLength; i++) {
-    countTotal++;
 
-    if (dnaSequence[i] == 'A') {
-      countAdenine++;
+  while(getline(fileInput, dnaSequence)) {
+    for(int i = 0; i < dnaSequence.length(); i++) {
+      countTotal++;
+      if (dnaSequence[i] == 'A') {
+        countAdenine++;
       } else if (dnaSequence[i] == 'T') {
         countThymine++;
       } else if (dnaSequence[i] == 'C') {
@@ -40,23 +37,21 @@ int main() {
       } else if (dnaSequence[i] == 'G') {
         countGuanine++;
       } else {
-        cout << dnaSequence[i] << " Error not of the four" << endl;
-        continue;
+        cout << i << " error" << endl;
       }
+    }  
 
     if (fileInput.fail()) {
       if (fileInput.eof()) {
-      cout << "End of the file!" << endl;
-    } else {
-      cout << "Unkown Error!" << endl;
+        cout << "End of the file!" << endl;
+      } else {
+        cout << "Unkown Error!" << endl;
+      }
+      exit(1);
     }
-    exit(1);
   }
-  }
-  }
-
   cout << endl;
-  
+
   cout << "DNA sequence analysis:" << endl;
   cout << countTotal << " nucleotides in the sequence" << endl;
   cout << endl << endl;
