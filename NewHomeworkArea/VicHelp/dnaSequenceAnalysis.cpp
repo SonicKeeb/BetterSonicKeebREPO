@@ -5,8 +5,11 @@ using namespace std;
 
 int main() {
 
+  // Declaration of variables
   int countTotal, countAdenine, countThymine, countCytosine, countGuanine = 0;
   double adeninePercent, thyminePercent, cytosinePercent, guaninePercent;
+
+  // Declaration of opening input Textfile and opening empty output file
 
   ifstream fileInput;
   fileInput.open("dnaSequence.txt");
@@ -22,8 +25,14 @@ int main() {
     exit(1);
   }
 
+  // Delcaring dnaSequence as a string to become all the inputted characters in the textfile
+
   string dnaSequence;
-//  getline(fileInput, dnaSequence);
+
+  // While loop iterates whenever there are still characters in the text file and 
+  // for every character (for loop goes through each index) the total count goes up each iteration
+  // and the same happens for the specific counters of the bases if at that index is a valid
+  // character.
 
   while(getline(fileInput, dnaSequence)) {
     for(int i = 0; i < dnaSequence.length(); i++) {
@@ -41,7 +50,7 @@ int main() {
       }
     }  
 
-    if (fileInput.fail()) {
+    if (fileInput.fail()) { // If the file fails and it is the end of the file exit
       if (fileInput.eof()) {
         fileOutput << "End of the file!" << endl;
       } else {
@@ -50,6 +59,13 @@ int main() {
       exit(1);
     }
   }
+
+  // Output all the calculation and prompt statements into fileOutput (the file is already open and 
+  // fileOutput is the name of "FileToWrite.txt" which is currently an empty file until the program 
+  // is run. 
+
+  // Once the program has been run the output goes into the file as text
+
   fileOutput << endl;
 
   fileOutput << "DNA sequence analysis:" << endl;
@@ -65,13 +81,17 @@ int main() {
 
   fileOutput << dnaSequence;
 
+  // If the file fails to output then prompt this statement and exit
+
   if ( fileOutput.fail()) {
     fileOutput << "Writing to output file failed!" << endl;
     exit(1);
   }
 
+  // Close the files both INPUT and OUTPUT
+
   fileInput.close();
   fileOutput.close();
 
-  return 0;
+  return 0; // End Program
 }
