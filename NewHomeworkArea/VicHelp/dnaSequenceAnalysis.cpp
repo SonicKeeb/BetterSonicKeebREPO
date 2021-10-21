@@ -77,10 +77,6 @@ int main() {
   fileOutput << "Cytosine:  " << countCytosine << setw(12) << fixed << setprecision(2) << double(double(countCytosine) / double(countTotal)) * 100.00 << "%" << endl;
   fileOutput << "Guanine:   " << countGuanine << setw(12) << fixed << setprecision(2) << double(double(countCytosine) / double(countTotal)) * 100.00 << "%" << endl;
 
-
-
-  fileOutput << dnaSequence;
-
   // If the file fails to output then prompt this statement and exit
 
   if ( fileOutput.fail()) {
