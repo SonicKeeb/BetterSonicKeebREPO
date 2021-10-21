@@ -23,7 +23,7 @@ int main() {
   }
 
   string dnaSequence;
-  getline(fileInput, dnaSequence);
+//  getline(fileInput, dnaSequence);
 
   while(getline(fileInput, dnaSequence)) {
     for(int i = 0; i < dnaSequence.length(); i++) {
@@ -37,36 +37,36 @@ int main() {
       } else if (dnaSequence[i] == 'G') {
         countGuanine++;
       } else {
-        cout << i << " error" << endl;
+        fileOutput << i << " error" << endl;
       }
     }  
 
     if (fileInput.fail()) {
       if (fileInput.eof()) {
-        cout << "End of the file!" << endl;
+        fileOutput << "End of the file!" << endl;
       } else {
-        cout << "Unkown Error!" << endl;
+        fileOutput << "Unkown Error!" << endl;
       }
       exit(1);
     }
   }
-  cout << endl;
+  fileOutput << endl;
 
-  cout << "DNA sequence analysis:" << endl;
-  cout << countTotal << " nucleotides in the sequence" << endl;
-  cout << endl << endl;
-  cout << "Sequence breakdown:" << endl;
-  cout << "Adenine:   " << countAdenine << setw(12) << fixed << setprecision(2) << double(double(countAdenine) / double(countTotal)) * 100.00 << "%" << endl;
-  cout << "Thymine:   " << countThymine << setw(12) << fixed << setprecision(2) << double(double(countThymine) / double(countTotal)) * 100.00 << "%" << endl;
-  cout << "Cytosine:  " << countCytosine << setw(12) << fixed << setprecision(2) << double(double(countCytosine) / double(countTotal)) * 100.00 << "%" << endl;
-  cout << "Guanine:   " << countGuanine << setw(12) << fixed << setprecision(2) << double(double(countCytosine) / double(countTotal)) * 100.00 << "%" << endl;
+  fileOutput << "DNA sequence analysis:" << endl;
+  fileOutput << countTotal << " nucleotides in the sequence" << endl;
+  fileOutput << endl << endl;
+  fileOutput << "Sequence breakdown:" << endl;
+  fileOutput << "Adenine:   " << countAdenine << setw(12) << fixed << setprecision(2) << double(double(countAdenine) / double(countTotal)) * 100.00 << "%" << endl;
+  fileOutput << "Thymine:   " << countThymine << setw(12) << fixed << setprecision(2) << double(double(countThymine) / double(countTotal)) * 100.00 << "%" << endl;
+  fileOutput << "Cytosine:  " << countCytosine << setw(12) << fixed << setprecision(2) << double(double(countCytosine) / double(countTotal)) * 100.00 << "%" << endl;
+  fileOutput << "Guanine:   " << countGuanine << setw(12) << fixed << setprecision(2) << double(double(countCytosine) / double(countTotal)) * 100.00 << "%" << endl;
 
 
 
-  cout << dnaSequence;
+  fileOutput << dnaSequence;
 
   if ( fileOutput.fail()) {
-    cout << "Writing to output file failed!" << endl;
+    fileOutput << "Writing to output file failed!" << endl;
     exit(1);
   }
 
