@@ -5,18 +5,26 @@ using namespace std;
 
 int CountEvens(int num1, int num2, int num3, int num4) {
   int result = 0;
-  for (int i = 0; i < 4; i++) {
-    if (i % 2 == 0) {
-      result++;
-    }
+  if (num1 % 2 == 0) {
+    result++;
+  } if (num2 % 2 == 0) {
+    result++;
+  } if (num3 % 2 == 0) {
+    result++;
+  } if (num4 % 2 == 0) {
+    result++;
+  } else {
+    ;
   }
   return result;
 }
 
 int main() {
-  int result;
-        
-  result = CountEvens(3, 1, 4, 12);
+  int result, num1, num2, num3, num4;
+
+  cin >> num1 >> num2 >> num3 >> num4;
+
+  result = CountEvens(num1, num2, num3, num4);
   cout << "Total evens: " << result << endl; // Expected "Total evens: 2".
 
   return 0;
