@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 #include <string>
 using namespace std;
 
@@ -7,8 +8,6 @@ int main() {
 
   // Declaration of variables
   int countTotal, countAdenine, countThymine, countCytosine, countGuanine = 0;
-  double adeninePercent, thyminePercent, cytosinePercent, guaninePercent;
-
   // Declaration of opening input Textfile and opening empty output file
 
   ifstream fileInput;
