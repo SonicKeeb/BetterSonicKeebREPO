@@ -39,27 +39,27 @@ int main() {
   switch(operation) {
       case 'c':
           // TODO: inches to centimeters
-          std::cout << inchesToCentimeters(input);
+          std::cout << inchesToCentimeters(input) << std::endl;
           break;
       case 'C':
           // TODO: feet to centimeters
-          std::cout << inchesToCentimeters(feetToInches(input));
+          std::cout << inchesToCentimeters(feetToInches(input)) << std::endl;
           break;
       case 'f':
           // TODO: inches to feet
-          std::cout << inchesToFeet(input);
+          std::cout << inchesToFeet(input) << std::endl;
           break;
       case 'F':
           // TODO: centimeters to feet
-          std::cout << inchesToFeet(centimetersToInches(input));
+          std::cout << inchesToFeet(centimetersToInches(input)) << std::endl;
           break;
       case 'i':
           // TODO: feet to inches
-          std::cout << feetToInches(input);
+          std::cout << feetToInches(input) << std::endl;
           break;
       case 'I':
           // TODO: centimeters to inches
-          std::cout << centimetersToInches(input);
+          std::cout << centimetersToInches(input) << std::endl;
           break;
       default:
           std::cout << "Unknown operation " << operation << std::endl;
