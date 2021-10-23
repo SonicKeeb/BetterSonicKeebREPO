@@ -75,7 +75,7 @@ int main() {
   fileOutput << "Adenine:   " << countAdenine << setw(12) << fixed << setprecision(2) << double(double(countAdenine) / double(countTotal)) * 100.00 << "%" << endl;
   fileOutput << "Thymine:   " << countThymine << setw(12) << fixed << setprecision(2) << double(double(countThymine) / double(countTotal)) * 100.00 << "%" << endl;
   fileOutput << "Cytosine:  " << countCytosine << setw(12) << fixed << setprecision(2) << double(double(countCytosine) / double(countTotal)) * 100.00 << "%" << endl;
-  fileOutput << "Guanine:   " << countGuanine << setw(12) << fixed << setprecision(2) << double(double(countCytosine) / double(countTotal)) * 100.00 << "%" << endl;
+  fileOutput << "Guanine:   " << countGuanine << setw(12) << fixed << setprecision(2) << double(double(countGuanine) / double(countTotal)) * 100.00 << "%" << endl;
 
   // If the file fails to output then prompt this statement and exit
 
