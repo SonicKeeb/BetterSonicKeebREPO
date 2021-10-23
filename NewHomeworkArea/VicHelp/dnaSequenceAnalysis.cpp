@@ -14,7 +14,7 @@ int main() {
   ifstream fileInput;
   fileInput.open("dnaSequence.txt");
   if ( !fileInput.is_open()) {
-    cerr << "File didn't open!" << std::endl;
+    cerr << "File didn't open!" << endl;
     exit(2);
   }
 
