@@ -4,28 +4,28 @@
 double inchesToCentimeters(double inches) {
   double centimeters;
   centimeters = inches * 2.54;
-  std::cout << centimeters << std::endl;
+  //std::cout << centimeters << std::endl;
   return centimeters;
 }
 
 double centimetersToInches(double centimeters) {
   double inches;
   inches = centimeters / 2.54;
-  std::cout << inches << std::endl;
+  //std::cout << inches << std::endl;
   return inches;
 }
 
 double inchesToFeet(double inches) {
   double feet;
   feet = inches / 12.0;
-  std::cout << feet << std::endl;
+  //std::cout << feet << std::endl;
   return feet;
 }
 
 double feetToInches(double feet) {
   double inches;
   inches = feet * 12.0;
-  std::cout << inches << std::endl;
+  //std::cout << inches << std::endl;
   return inches;
 }
 
@@ -39,27 +39,27 @@ int main() {
   switch(operation) {
       case 'c':
           // TODO: inches to centimeters
-          inchesToCentimeters(input);
+          std::cout << inchesToCentimeters(input);
           break;
       case 'C':
           // TODO: feet to centimeters
-          inchesToCentimeters(feetToInches(input));
+          std::cout << inchesToCentimeters(feetToInches(input));
           break;
       case 'f':
           // TODO: inches to feet
-          inchesToFeet(input);
+          std::cout << inchesToFeet(input);
           break;
       case 'F':
           // TODO: centimeters to feet
-          inchesToFeet(centimetersToInches(input));
+          std::cout << inchesToFeet(centimetersToInches(input));
           break;
       case 'i':
           // TODO: feet to inches
-          feetToInches(input);
+          std::cout << feetToInches(input);
           break;
       case 'I':
           // TODO: centimeters to inches
-          centimetersToInches(input);
+          std::cout << centimetersToInches(input);
           break;
       default:
           std::cout << "Unknown operation " << operation << std::endl;
