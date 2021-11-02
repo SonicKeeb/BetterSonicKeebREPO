@@ -1,21 +1,27 @@
 #include <iostream>
 using namespace std;
 
-  int main() {
+int main() {
+  bool goodPassword;
+  string checkStr;
 
-  string inputString;
-  int length = inputString.length();
-  string output;
+  cin >> checkStr;
 
-  cin >> inputString;
-
-  for (int i = 0; i < inputString.length(); i++) {
-    if (i < 9) {
-      output = "Valid";
+  /* Your code goes here */
+  for (int i = 0; i < checkStr.length(); i++) {
+    if (i < 8) {
+      goodPassword = true;
     } else {
-      output = "Invalid";
+      goodPassword = false;
     }
   }
-  cout << output << endl;
+
+  if (goodPassword) {
+    cout << "Valid" << endl;
+  }
+  else {
+    cout << "Invalid" << endl;
+  }
+
   return 0;
 }
