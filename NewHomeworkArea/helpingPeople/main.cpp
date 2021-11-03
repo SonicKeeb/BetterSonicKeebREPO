@@ -8,13 +8,11 @@ int main() {
   cin >> checkStr;
 
   /* Your code goes here */
-  for (int i = 0; i < checkStr.length(); i++) {
-    if (i < 8) {
-      goodPassword = true;
+  if (checkStr.length < 8) {
+    goodPassword = true;
     } else {
       goodPassword = false;
     }
-  }
 
   if (goodPassword) {
     cout << "Valid" << endl;
