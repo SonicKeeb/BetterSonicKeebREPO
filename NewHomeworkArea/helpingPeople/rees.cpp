@@ -8,16 +8,7 @@ using namespace std;
 //bool getScore (int& testScore, int& testScore, int& testScore3);
 
 double average (int test1, int test2, int test3) {
-
-  cout << "Enter first test score: ";
-  cin >> test1;
-
-  cout << "Enter second test score: ";
-  cin >> test2;
-
-  cout << "Enter third test score: ";
-  cin >> test3;
-
+  
   cout << fixed << setprecision(1);
 
   double average;
