@@ -13,7 +13,6 @@ double average (int test1, int test2, int test3) {
 
   double average;
   average = (test1 + test2 + test3) / 3.0;
-  cout << average << endl;
   return average;
 }
 
