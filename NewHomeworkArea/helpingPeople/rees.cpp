@@ -75,14 +75,20 @@ bool getScore (int& testScore) {
 }
 
 int main() {
-  int firstTest, secondTest, thirdTest, testScore;
+  int firstTest, secondTest, thirdTest;
+  bool validCheck1 = getScore(firstTest);
 
-  double avg = average (firstTest, secondTest, thirdTest);
-  char grade = getLetterGrade (avg, thirdTest);
-  cout << avg << endl;
-  cout << grade << endl;
-
-  getScore(testScore);
-
+  if (validCheck1) {
+    bool validCheck2 = getScore(secondTest);
+    if (validCheck2) {
+      bool validCheck3 = getScore(thirdTest);
+      if (validCheck3) {
+        double avg = average(firstTest, secondTest, thirdTest);
+        cout << avg << endl;
+        char grade = getLetterGrade(avg, thirdTest);
+        cout << grade << endl;
+      }
+    }
+  }
   return 0;
 }
