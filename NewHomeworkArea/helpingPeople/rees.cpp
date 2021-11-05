@@ -8,12 +8,12 @@ using namespace std;
 //bool getScore (int& testScore, int& testScore, int& testScore3);
 
 double average (int test1, int test2, int test3) {
-  
+
   cout << fixed << setprecision(1);
 
   double average;
   average = (test1 + test2 + test3) / 3.0;
-
+  cout << average << endl;
   return average;
 }
 
@@ -53,7 +53,7 @@ char getLetterGrade (double avg, int test3) {
 bool getScore (int& testScore) {
   bool valid;
 
-  cout << "Enter testscore: " << endl;
+  cout << endl;
   cin >> testScore;
 
   if (testScore < 0 || testScore > 100) {
@@ -74,10 +74,7 @@ int main() {
     if (validCheck2) {
       bool validCheck3 = getScore(thirdTest);
       if (validCheck3) {
-        double avg = average(firstTest, secondTest, thirdTest);
-        cout << avg << endl;
-        char grade = getLetterGrade(avg, thirdTest);
-        cout << grade << endl;
+        cout << getLetterGrade(average(firstTest, secondTest, thirdTest), thirdTest) << endl;
       }
     }
   }
