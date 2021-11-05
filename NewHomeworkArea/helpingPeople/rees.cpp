@@ -77,12 +77,12 @@ bool getScore (int& testScore) {
 int main() {
   int firstTest, secondTest, thirdTest, testScore;
 
-  getScore(testScore);
-
   double avg = average (firstTest, secondTest, thirdTest);
   char grade = getLetterGrade (avg, thirdTest);
   cout << "Your course average is " << avg << endl;
   cout << "Your final grade is " << grade << endl;
+
+  getScore(testScore);
 
   return 0;
 }
