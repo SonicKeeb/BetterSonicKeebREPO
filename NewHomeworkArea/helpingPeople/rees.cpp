@@ -7,7 +7,7 @@ using namespace std;
 //char getLetterGrade (double avg, int test3);
 //bool getScore (int& testScore, int& testScore, int& testScore3);
 
-double average (int& test1, int& test2, int& test3) {
+double average (int test1, int test2, int test3) {
 
   cout << "Enter first test score: ";
   cin >> test1;
@@ -18,7 +18,7 @@ double average (int& test1, int& test2, int& test3) {
   cout << "Enter third test score: ";
   cin >> test3;
 
-  cout << fixed << showpoint << setprecision(1);
+  cout << fixed << setprecision(1);
 
   double average;
   average = (test1 + test2 + test3) / 3.0;
@@ -59,9 +59,8 @@ char getLetterGrade (double avg, int test3) {
   return grade;
 }
 
-bool getScore () {
+bool getScore (int& testScore) {
   bool valid;
-  int testScore;
 
   cout << "Enter testscore: " << endl;
   cin >> testScore;
@@ -74,10 +73,12 @@ bool getScore () {
   }
   return valid;
 }
-int main() {
-  int firstTest, secondTest, thirdTest;
 
-  getScore();
+int main() {
+  int firstTest, secondTest, thirdTest, testScore;
+
+  getScore(testScore);
+
   double avg = average (firstTest, secondTest, thirdTest);
   char grade = getLetterGrade (avg, thirdTest);
   cout << "Your course average is " << avg << endl;
@@ -85,5 +86,3 @@ int main() {
 
   return 0;
 }
-
-
