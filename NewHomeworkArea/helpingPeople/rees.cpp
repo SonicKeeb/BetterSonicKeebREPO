@@ -79,8 +79,8 @@ int main() {
 
   double avg = average (firstTest, secondTest, thirdTest);
   char grade = getLetterGrade (avg, thirdTest);
-  cout << "Your course average is " << avg << endl;
-  cout << "Your final grade is " << grade << endl;
+  cout << avg << endl;
+  cout << grade << endl;
 
   getScore(testScore);
 
