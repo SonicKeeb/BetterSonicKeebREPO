@@ -53,8 +53,10 @@ void formatLine(ostream& output, double countNucleotides, int amountOfSpecificNu
 	string nucleotide;
 	int countOfSpecificNucleotide = 0;
 	const int TWO_DECIMAL_FORMATTER(2);
-	const int WIDTH_FORMAT_ONE = 11;
-	const int WIDTH_FORMAT_TWO = 10;
+	const int WIDTH_FORMAT_ONE = 7;
+	const int WIDTH_FORMAT_TWO = 6;
+	const int WIDTH_FORMAT_THREE = 5;
+	const int WIDTH_FORMAT_FOUR = 4;
 
 	if(abbrevNucleotide == 'A')
 	{
@@ -79,10 +81,17 @@ void formatLine(ostream& output, double countNucleotides, int amountOfSpecificNu
 
 	if(nucleotide == "Adenine" || nucleotide == "Thymine" || nucleotide == "Guanine" ) { 
 		output << nucleotide << ":  " << setw(WIDTH_FORMAT_ONE) << left << countOfSpecificNucleotide << "\t";
-    output << fixed << setprecision(TWO_DECIMAL_FORMATTER) << countOfSpecificNucleotide / countNucleotides * PERCENTAGE_MAKER  <<"%\n";
+
+		output << fixed << setprecision(TWO_DECIMAL_FORMATTER) << countOfSpecificNucleotide / countNucleotides * PERCENTAGE_MAKER  <<"%\n";
+
+		cout << nucleotide << ":  " << setw(12) << left << countOfSpecificNucleotide;
+
+		cout << fixed << setprecision(TWO_DECIMAL_FORMATTER) << countOfSpecificNucleotide / countNucleotides * PERCENTAGE_MAKER  <<"%\n";
 	}
 	else if(nucleotide == "Cytosine") {
 		output << nucleotide << ": " << setw(WIDTH_FORMAT_TWO) << left << countOfSpecificNucleotide << "\t" << fixed << setprecision(TWO_DECIMAL_FORMATTER) << countOfSpecificNucleotide / countNucleotides * PERCENTAGE_MAKER  <<"%\n";
+
+		cout << nucleotide << ": " << setw(11) << left << countOfSpecificNucleotide << "\t" << fixed << setprecision(TWO_DECIMAL_FORMATTER) << countOfSpecificNucleotide / countNucleotides * PERCENTAGE_MAKER  <<"%\n";
 	}
 }
 
@@ -91,6 +100,8 @@ void outputReport (ostream& outputFile, int sumNucleotides, int countAdenine, in
 	char abbrevNucleotide;
 	outputFile << "DNA sequence analysis:\n" << sumNucleotides <<" nucleotides in the sentence.\n";
 	outputFile << "\nSequence breakdown:\n";
+	cout << "DNA sequence analysis:\n" << sumNucleotides <<" nucleotides in the sentence.\n";
+	cout << "\nSequence breakdown:\n";
 	formatLine(outputFile, sumNucleotides, countAdenine, abbrevNucleotide = 'A');
 	formatLine(outputFile, sumNucleotides, countThymine, abbrevNucleotide = 'T');
 	formatLine(outputFile, sumNucleotides, countCytosine, abbrevNucleotide = 'C');
@@ -113,6 +124,8 @@ int main() {
 	outputReport(outputFile, sumNucleotides, countAdenine, countThymine, countCytosine, countGuanine);
 
 	outputFile.close();
+
+
 
 	return 0;
 }
