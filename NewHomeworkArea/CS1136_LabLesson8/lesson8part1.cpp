@@ -7,42 +7,40 @@ double readSeconds() {
   double seconds;
   cout << "Enter the time (in seconds)" << endl;
   while (cin >> seconds) {
-    if (seconds < 0) {
+    if (seconds == 0) {
+      break;
+    } else if (seconds < 0) {
       cout << "The time must be zero or more" << endl;
       cout << "Enter the time (in seconds)" << endl;
-    } else if (seconds > 0) {
-      cout << "Enter the time (in seconds)" << endl;
     } else {
-      break;
+      return seconds;
     }
-    return seconds;
   }
-  return seconds;
+ return seconds;
 }
 
 double calculateEarthDistance(double seconds) {
-  double g = 9.8 * (seconds * seconds);
-  double earthDistance = 0.5 * g;
+  double earthDistance = 0.5 * 9.8 * pow(seconds, 2);
   return earthDistance;
   }
 
 double calculateMoonDistance(double seconds) {
-  double g = 1.6 * (seconds * seconds);
-  double moonDistance = 0.5 * g;
+  double moonDistance = 0.5 * 1.6 * pow(seconds, 2);
   return moonDistance;
 }
 
 void displayResults(double seconds, double earthDistance, double moonDistance) {
-  cout << "The object traveled " << earthDistance << " meters in " << seconds << " seconds on Earth" << endl;
-  cout << "The object traveled " << moonDistance << " meters in " << seconds << " seconds on the Moon" << endl;
+  cout << "The object traveled " << fixed << setprecision(4) << earthDistance << " meters in " << fixed << setprecision(2) << seconds << " seconds on Earth" << endl;
+  cout << "The object traveled " << fixed << setprecision(4) <<  moonDistance << " meters in " << fixed << setprecision(2) << seconds << " seconds on the Moon" << endl;
 }
 
 
 int main() { 
   
-  cout << fixed << setprecision(4);
-  cout << calculateEarthDistance(readSeconds());
-  cout << calculateMoonDistance(readSeconds());
-
+ while (double seconds = readSeconds()) {
+  if (seconds > 0) {
+    displayResults(seconds, calculateEarthDistance(seconds), calculateMoonDistance(seconds));
+  }
+ }
   return 0;
 }
