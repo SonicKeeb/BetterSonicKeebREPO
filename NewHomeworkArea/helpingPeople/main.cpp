@@ -1,23 +1,39 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int main() {
+void reverseArrayCopy(int original[], int originalSize, int newVersion[], int newVersionSize)
+{
 
-for (int i = 0; i < 1; i++) {
-  for (int j = 0; j < 3; j++) {
-    cout << "0" << j << " ";
+  for (int i=0; i < newVersionSize; i++)
+  {
+    cout << newVersion[i] << " ";
+
   }
-  cout << endl;
-  for (int a = 10; a < 13; a++) {
-    cout << a << " ";
-  }
-  cout << endl;
-  for (int b = 20; b < 23; b++) {
-    cout << b << " ";
-  }
-  cout << endl;
 }
 
+/* Your function here */
+
+int main() {
+  const int ARRAY_SIZE = 5;
+  int original[ARRAY_SIZE];
+  const int NEW_SIZE = 5;
+  int copy[NEW_SIZE];
+
+  for ( int i=0; i<ARRAY_SIZE; i++) {
+    std::cin >> original[i];
+  }
+
+  for (int i=0; i < ARRAY_SIZE; i++)
+  {
+    copy[i] = original[i];
+    cout << copy[i];
+  }
+
+
+  reverseArrayCopy(original, ARRAY_SIZE, copy, NEW_SIZE);
+
+  /* Your code here */
 
   return 0;
 }
