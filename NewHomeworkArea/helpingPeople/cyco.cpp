@@ -1,35 +1,55 @@
 #include <iostream>
 #include <iomanip>
-#include <vector>
+#include <fstream>
 using namespace std;
 
-int main() {
-  double nextIn;
-  int vecSize;
-  double max = 0;
-  double normal;
-  vector <double> myVec;
+int main()
+{
+  string fileName;
+  cout << "Enter input file name" << endl;
+  cin >> fileName;
 
-  cout << fixed << setprecision(2);
-  cin >> vecSize; 
-  for (int i=0; i < vecSize; i++)
+  ifstream inputFile;
+  ofstream outputFile;
+
+  inputFile.open(fileName);
+  unsigned int storeNum;
+  long long int salesNum;
+  if (inputFile >> storeNum >> salesNum)
   {
-    cin >> nextIn;
-    myVec.push_back(nextIn);
-    if (nextIn > max)
+    outputFile.open("saleschart.txt");
+    // the file opened successfully
+    while (inputFile >> storeNum >> salesNum)
     {
-      max = nextIn;
+      if (storeNum < 1 || storeNum > 99)
+      {
+        cout << "The store number " << storeNum << " is not valid" << endl;
+        break;
+      }
+      else if (salesNum < 0)
+      {
+        cout << "The sales value for store " << storeNum << " is negative" << endl;
+        break;
+      }
+      else
+      {
+        cout << "Store" << setw(2) << storeNum << ":";
+        if (salesNum % 5000 != 0)
+        {
+          cout << '*';
+          salesNum = salesNum - 5000;
+        }
+        cout << '\n';
+      }
+
     }
+    inputFile.close();
+    outputFile.close();
   }
-
-  for (int i=0; i < vecSize; i++)
+  else
   {
-    normal = myVec.at(i) / max;
-    cout << normal << ' ';
+    cout << "File " << '"' << fileName << '"' << " could not be opened" << endl;
   }
-
-  cout << '\n';
-
 
   return 0;
 }
