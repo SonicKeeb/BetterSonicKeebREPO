@@ -1,81 +1,74 @@
 #include <iostream>
 #include <iomanip>
-#include <cmath>
 using namespace std;
 
-//double average (int& test1, int& test2, int& test3);
-//char getLetterGrade (double avg, int test3);
-//bool getScore (int& testScore, int& testScore, int& testScore3);
+void read(unsigned int& value1, unsigned int& value2);
 
-double average (int test1, int test2, int test3) {
+void display(unsigned int& value1, unsigned int& value2, unsigned char char1, unsigned char char2, int count);
 
-  cout << fixed << setprecision(1);
+int main()
+{
+  int count;
+  unsigned int firstVal, secondVal;
+  unsigned char firstChar, secondChar;
 
-  double average;
-  average = (test1 + test2 + test3) / 3.0;
-  return average;
-}
+  read(firstVal, secondVal);
 
-char getLetterGrade (double avg, int test3) {
-  char grade;
+  display(firstVal, secondVal, firstChar, secondChar, count);
 
-  if (avg >= 90) {
-    grade = 'A';
-  }
-
-  if (avg >= 80 && avg < 90) {
-    if (test3 >= 95) {
-      grade = 'A';
-    } else {
-      grade = 'B';
-    }
-  }
-
-  if (avg >= 70 && avg < 80) {
-    if (test3 >= 85) {
-      grade = 'B';
-    } else {
-      grade = 'C';
-    }
-  }
-
-  if (avg >= 60 && avg < 70) {
-    if (test3 >= 75) {
-      grade = 'C';
-    } else {
-      grade = 'D';
-    }
-  }
-  return grade;
-}
-
-bool getScore (int& testScore) {
-  bool valid;
-
-  cout << endl;
-  cin >> testScore;
-
-  if (testScore < 0 || testScore > 100) {
-    cout << "The score entered is invalid, the valid range is 0 - 100" << endl;
-    valid = false;
-  } else {
-    valid = true;
-  }
-  return valid;
-}
-
-int main() {
-  int firstTest, secondTest, thirdTest;
-  bool validCheck1 = getScore(firstTest);
-
-  if (validCheck1) {
-    bool validCheck2 = getScore(secondTest);
-    if (validCheck2) {
-      bool validCheck3 = getScore(thirdTest);
-      if (validCheck3) {
-        cout << getLetterGrade(average(firstTest, secondTest, thirdTest), thirdTest) << endl;
-      }
-    }
-  }
   return 0;
+}
+
+void read(unsigned int& value1, unsigned int& value2)
+{
+  cout << "Enter lower and upper values" << endl;
+  cin >> value1;
+  cin >> value2;
+
+  while (value1 < 32 || value1 > 126 || value2 < 32 || value2 > 126 || value1 > value2)
+  {
+    cout << "Values must be in range 32 to 126 inclusive" << endl;
+
+    cout << "Enter lower and upper values" << endl;
+    cin >> value1;
+    cin >> value2;
+
+  }
+
+}
+
+void display(unsigned int& value1, unsigned int& value2, unsigned char char1, unsigned char char2, int count)
+{
+
+  char1 = value1;
+  char2 = value2;
+
+  count = 1;
+
+  cout << "Characters for ASCII values between " << value1 << " and " << value2 << endl;
+  cout << "----+----+----+----+" << endl;
+  cout << char1;
+
+  while(char1 < char2)
+  {
+    char1++;
+    cout << char1;
+
+    count = count + 1;
+
+    if (count % 20 == 0 || count == (value2 + 1 - value1))
+    {
+      cout << endl;
+    }
+
+    if(char1 >= char2)
+    {
+      cout << endl;
+
+      break;
+    }
+  }
+
+  cout << "----+----+----+----+" << endl;
+
 }

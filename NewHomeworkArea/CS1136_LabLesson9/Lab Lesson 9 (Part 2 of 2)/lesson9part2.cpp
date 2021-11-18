@@ -1,69 +1,71 @@
 #include <iostream>
 #include <iomanip>
-#include <cmath>
 #include <fstream>
+#include <string>
+#include <cmath>
 using namespace std;
 
-unsigned int read(unsigned int& rValue, istream& inputFile, double& presentValue, double& interestRate, int& months) {
-  while (inputFile >> presentValue >> interestRate >> months) {
-    if (presentValue <= 0 || interestRate <= 0 || months <= 0) {
-      cout << fixed << setprecision(2) << presentValue << " " << fixed << setprecision(3) << interestRate << " " << months << endl;
-      cout << "One or more of the above values are not greater than zero" << endl;
-      rValue = 2;
-    } else {
-      interestRate = interestRate / 100;
-      rValue = 1;
-    }
+unsigned int readInput(ifstream& inputFile, double& present, double& interest, int& months) {
+  inputFile >> present >> interest >> months;
+  interest /= 100;
+  if (inputFile.eof()) { 
+    return 0; 
   }
-  return rValue;
-}
-
-double futureValue(double presentValue, double interestRate, int months) {
-  double f = presentValue * pow((1 + interestRate), months);
-  return f;
-}
-
-void output(ostream& outputFile, istream& inputFile, unsigned int rValue, double presentValue, double interestRate, int months) {
-  outputFile << "Future Value\tPresent Value\tMonthly Interest\tMonths" << endl;
-  if (rValue != 1) {
-    return;
-  } else {
-    outputFile << fixed << setprecision(2) << futureValue(presentValue, interestRate, months);
-    outputFile << "\t" << fixed << setprecision(2) << presentValue << "\t" << fixed << setprecision(3) << interestRate * 100 << "\t" << months << endl;
+  if (!(present > 0.0 && interest > 0.0 && months > 0)) {
+    return 2;
   }
+  return 1;
 }
 
+double futureValue(double present, double interest, int months) {
+  double future = present * pow((1 + interest), months); //
+  return future;
+}
 
+void display(ofstream& outputFile, double present, double interest, int months, double future){
+  outputFile << fixed << setprecision(2) << future << "\t" << present;
+  outputFile << fixed << setprecision(3) << "\t" << interest * 100 << "\t" << months << std::endl;
+}
 
 int main() {
-  double presentValue, interestRate;
-  int months;
-  unsigned int rValue;
+  double present = 0.0, interest = 0.0, future = 0.0;
+  int months = 0;
+  ifstream inputFile;
+  ofstream outputFile;
   string fileName;
 
-  cout << fixed << setprecision(2);
   cout << "Enter input file name" << endl;
   cin >> fileName;
 
-  ifstream inputFile;
-  inputFile.open(fileName);
-  if (!inputFile.is_open()) {
-    cout << "File " "\"" << fileName << "\" could not be opened" << endl;
-    exit(2);
-  }
-
-  ofstream outputFile;
   outputFile.open("output.xls");
+  inputFile.open(fileName);
+
+  if (!inputFile.is_open()) {
+    cout << "File \"" << fileName << "\" could not be opened" << endl;
+    return -1; 
+  }
   if (!outputFile.is_open()) {
-    cerr << "Output file didn't open!" << endl;
-    exit(1);
+    cout << "File \"output.xls\" could not be opened" << endl;
+    return -1; 
   }
 
-  while (inputFile) {
-    read(rValue, inputFile, presentValue, interestRate, months);
-    futureValue(presentValue, interestRate, months);
-    output(outputFile, inputFile, rValue, presentValue, interestRate, months);
+  outputFile << "Future Value\tPresent Value\tMonthly Interest\tMonths" << endl;
+
+  unsigned int returnType = readInput(inputFile, present, interest, months); 
+  while (returnType != 0) {
+    if (returnType == 1) { 
+      future = futureValue(present, interest, months);
+      display(outputFile, present, interest, months, future);
+    }
+    if (returnType == 2) { 
+      cout << fixed << setprecision(2) << present << " " << setprecision(3) << interest * 100 << " " << months << endl;
+      cout << "One or more of the above values are not greater than zero" << endl;
+    }
+    returnType = readInput(inputFile, present, interest, months);
   }
+
+  inputFile.close();
+  outputFile.close();
 
   return 0;
 }
