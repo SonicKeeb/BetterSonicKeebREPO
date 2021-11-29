@@ -5,3 +5,8 @@ Store  2: *****
 Store  3: *******
 Store  4: *****
 Store  5: *
+Store  6: *
+Store 10: **
+Store 12: ***
+Store 67: ****
+Store 99: *****
