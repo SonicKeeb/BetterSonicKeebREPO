@@ -1,0 +1,5 @@
+Barrett	Edan	70.00	45.00	59.00	F
+Bradshaw	Reagan	96.00	97.00	88.00	A
+Charlton	Caius	73.00	94.00	80.00	B
+Mayo	Tyrese	88.00	61.00	36.00	D
+Stern	Brenda	90.00	86.00	45.00	C
