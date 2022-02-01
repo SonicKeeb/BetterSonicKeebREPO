@@ -60,7 +60,7 @@ cin >> e3;
 
 avg = (e1 + e2 + e3) / 3;
 
-cout << "Last" << right << setw(15) << "First" << right << setw(15) << "Course" << right << setw(5) << "E1" << right << setw(4) << "E2" << right << setw(4) << "E3" << right << setw(5) << "AVG" << endl;
-cout << lastName << right << setw(16) << firstName << right << setw(14) << course << right << setw(5) << e1 << right << setw(4) << e2 << right << setw(4) << e3 << right << setw(7) << fixed << setprecision(2) << avg << right << setw(6) << endl;
+cout << left << setw(15) << "Last" << left << setw(15) << "First" << left << setw(5) << "Course  " << left << setw(4) << "E1" << left << setw(4) << "E2" << left << setw(4) << "E3" << left << setw(6) << "AVG" << endl;
+cout << left << setw(15) << lastName << left << setw(17) << firstName << left << setw(6) << course << left << setw(4) << e1 << left << setw(4) << e2 << left << setw(4) << e3 << fixed << setprecision(2) << left << setw(6) << avg << endl;
   return 0;
 }
