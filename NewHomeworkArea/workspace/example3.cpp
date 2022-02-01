@@ -60,7 +60,11 @@ cin >> e3;
 
 avg = (e1 + e2 + e3) / 3;
 
-cout << left << setw(15) << "Last" << left << setw(15) << "First" << left << setw(5) << "Course  " << left << setw(4) << "E1" << left << setw(4) << "E2" << left << setw(4) << "E3" << left << setw(6) << "AVG" << endl;
-cout << left << setw(15) << lastName << left << setw(17) << firstName << left << setw(6) << course << left << setw(4) << e1 << left << setw(4) << e2 << left << setw(4) << e3 << fixed << setprecision(2) << left << setw(6) << avg << endl;
-  return 0;
+cout << left << setw(15) << "Last" << left << setw(15) << "First" << left << setw(5) << "Course  " /* I added two spaces in the Course string to improve the readability of the output */
+<< left << setw(4) << "E1" << left << setw(4) << "E2" << left << setw(4) << "E3" << left << setw(6) << "AVG" << endl;
+
+cout << left << setw(15) << lastName << left << setw(17) << firstName << left << setw(6) 
+<< course << left << setw(4) << e1 << left << setw(4) << e2 << left << setw(4) << e3 << fixed << setprecision(2) << left << setw(6) << avg << endl;
+
+return 0;
 }
