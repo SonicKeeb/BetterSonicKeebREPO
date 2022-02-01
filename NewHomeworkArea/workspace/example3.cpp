@@ -1,3 +1,37 @@
+//PsuedoCode Here
+/*
+  Start program
+  Include iomanip for setw
+  use namespace std
+  
+  intialize string firstName, lastName
+  initialize integer course
+  initilize double e1, e2, e3
+  intialize double avg
+    
+    output "Enter first and Last name"
+    input firstName, lastName
+
+    output "Enter Course"
+    input course
+      
+    output "Exam Score 1"
+    input e1
+
+    output "Exam Score 2"
+    input e2
+
+    output "Exam Score 3"
+    input e3
+    
+    avg = (e1 + e2 + e3) / 3
+    
+    output "Last", "First", "Course", "E1", "E2", "E3", "AVG"
+    output lastName, firstName, course, e1, e2, e3, avg
+
+    return 0
+*/
+
 #include <iostream>
 #include <iomanip>
 using namespace std;
