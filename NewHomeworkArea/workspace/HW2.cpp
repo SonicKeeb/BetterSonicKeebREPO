@@ -1,3 +1,16 @@
+/* 
+Name: Hamilton Ngo
+CS1337.002
+Date: 3/08/2022
+Description: This program presents a menu of various processes in which the user
+can choose which one they want to use. After the process is done the user can choose again.
+Assumptions: The user will really only choose one process to do at a time
+
+Note: Flowchart will be submitted in with this cpp file but it will not be in the cpp file
+*/
+
+
+
 #include <iostream>
 #include <fstream>
 #include <iomanip>
