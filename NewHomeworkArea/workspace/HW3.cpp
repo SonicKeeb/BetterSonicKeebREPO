@@ -21,9 +21,7 @@ int main() {
 
   string fileName = "fullPath.txt";
   
-  transaction *ptr;
-  transaction array[100];
-  ptr = array;
+  transaction *ptr = nullptr;
 
   bool option_arrays[5] = {false}; // sets all 5 elements to false
 
@@ -42,6 +40,7 @@ int main() {
         if (option_arrays[0] == true) {
           readTransactionInformation(ptr, 100, "fullPath.txt");
         }
+        break;
       case 'c':
       case 'd':
       case 'e':
