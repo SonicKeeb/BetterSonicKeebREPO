@@ -110,5 +110,10 @@ bool readTransactionInformation(transaction *&arr, int SIZE, string fullpath) {
     inputFile >> arr[count].id >> arr[count].accountNumber >> arr[count].dollar 
               >> arr[count].dateTime;
 }
+
+  while (!inputFile.eof()) {
+    cout << arr[count].id << "\t" << arr[count].accountNumber << "\t" <<  arr[count].dollar << "\t" << arr[count].dateTime << endl;
+}
+
 return true;
 }
