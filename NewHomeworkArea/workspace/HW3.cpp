@@ -18,11 +18,12 @@ int testInputFile(string fullpath);
 bool readTransactionInformation(transaction *&arr, int SIZE, string fullpath);
 void transactionStatistics(transaction *arr, int SIZE, int &min, int &max, double &average);
 transaction *searchElement(transaction *arr, int SIZE, int key);
+bool addTransaction (string filename);
 
 int main() {
 
   string fileName;
-
+  
   transaction *ptr = nullptr;
   int num_rows = 0;
   bool option_arrays[5] = {false}; // sets all 5 elements to false
@@ -56,7 +57,8 @@ int main() {
         break;
       case 'd':
         if (option_arrays[2] == true) {
-          transaction *searchElement(ptr, num_rows, key);
+          transaction *point;
+          point = searchElement(ptr, num_rows, key);
         }
         option_arrays[3] = true;
         break;
@@ -186,8 +188,28 @@ transaction *searchElement(transaction *arr, int SIZE, int key) {
   cout << endl;
   for (int i = 0; i < SIZE; i++) {
     if (arr[i].id == key) {
+      cout << "value has been found" << endl;
       return &arr[i];
     } 
   }
+  cout << "Value was not found" << endl;
   return nullptr;
+}
+
+bool addTransaction(string filename) {
+
+  string data[25];
+
+  filename = "fullPath.txt";
+  
+  ofstream output(filename, ios::app);
+  ifstream inputFile;
+  inputFile.open(filename);
+
+  for (int i = 0; i < 4; i++) {
+    id >> data[i]
+  if (inputFile.is_open()) {
+  output << id << "afasfdaafsad" << accountNumber << " " << dollar << " " << dateTime << endl;
+  }
+return true;
 }
