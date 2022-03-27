@@ -184,13 +184,10 @@ transaction *searchElement(transaction *arr, int SIZE, int key) {
   cout << "Enter an integer value - key: " << endl;
   cin >> key;
   cout << endl;
-  int element;
   for (int i = 0; i < SIZE; i++) {
-    if (arr[i].id != key) {
-      continue;
-    } else {
-      element = arr[i].id;
+    if (arr[i].id == key) {
+      return &arr[i];
+    } 
   }
-  }
-  return arr;
+  return nullptr;
 }
