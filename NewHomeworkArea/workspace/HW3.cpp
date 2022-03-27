@@ -18,7 +18,7 @@ int testInputFile(string fullpath);
 bool readTransactionInformation(transaction *&arr, int SIZE, string fullpath);
 void transactionStatistics(transaction *arr, int SIZE, int &min, int &max, double &average);
 transaction *searchElement(transaction *arr, int SIZE, int key);
-bool addTransaction (string filename);
+bool addTransaction(string filename);
 
 int main() {
 
@@ -63,9 +63,14 @@ int main() {
         option_arrays[3] = true;
         break;
       case 'e':
+        if (option_arrays[3] == true) {
+          addTransaction("fullPath.txt");
+        }
+        option_arrays[4] = true;
       case 'f':
+        exit(0);
       default:
-        cout << "Invalid input  or you exited" << endl;
+        cout << "Invalid input" << endl;
         break;
     }
   } while(user_option != 'f');
@@ -198,18 +203,21 @@ transaction *searchElement(transaction *arr, int SIZE, int key) {
 
 bool addTransaction(string filename) {
 
-  string data[25];
-
   filename = "fullPath.txt";
-  
-  ofstream output(filename, ios::app);
-  ifstream inputFile;
-  inputFile.open(filename);
+  ofstream file_out;
 
-  for (int i = 0; i < 4; i++) {
-    id >> data[i]
-  if (inputFile.is_open()) {
-  output << id << "afasfdaafsad" << accountNumber << " " << dollar << " " << dateTime << endl;
-  }
+  file_out.open(filename, ios_base::app);
+  cout << "Enter in id, account number, dollar, and dateTime(all at once have a space inbetween: " 
+       << endl;
+  
+  int id;
+  unsigned long long int accountNumber;
+  double dollar;
+  string dateTime;
+
+  cin >> id >> accountNumber >> dollar >> dateTime;
+
+  file_out << id << " " << accountNumber << " " << dollar << " " << dateTime << endl;
+
 return true;
 }
