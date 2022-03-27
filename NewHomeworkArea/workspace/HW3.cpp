@@ -1,3 +1,16 @@
+/*
+Hamilton Ngo
+CS1337.002 
+3/26/2022
+This program presents the user with a menu and requires them to go through the menu
+in the selected order from top to bottom implementing the contents of the text file chosen
+by the user and it does some calculations and appending with it.
+Assumptions: My part e never fails assuming that the person read my directions right and did what
+I told them to do correctly
+
+NOTE: I will add in my text file because there are some parts that I used the direct name of
+my text file
+*/
 #include <iostream>
 #include <iomanip>
 #include <fstream>
