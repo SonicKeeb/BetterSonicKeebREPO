@@ -17,7 +17,7 @@ my text file
 #include <string>
 using namespace std;
 
-struct info {
+struct info { //struct created and defined right here
   int id;
   unsigned long long int accountNumber;
   double dollar;
@@ -25,7 +25,7 @@ struct info {
 };
 typedef struct info transaction;
 
-
+//Next 6 lines are function prototypes, full functoins under main
 void displayMenu();
 int testInputFile(string fullpath);
 bool readTransactionInformation(transaction *&arr, int SIZE, string fullpath);
@@ -51,7 +51,7 @@ int main() {
     cin >> user_option;
     switch (user_option) {
       case 'a':
-        option_arrays[0] = true;
+        option_arrays[0] = true; //setting each part of the step to true allows the input validation2wrk
         cout << "Enter full path file" << endl;
         cin >> fileName;
         num_rows = testInputFile(fileName);
@@ -91,7 +91,7 @@ int main() {
   return 0;
 }
 
-void displayMenu() {
+void displayMenu() { // Display menu function to save lines
   cout << "A. Get file location" << endl <<
     "B. Read file information" << endl <<
     "C. Display statistics" << endl <<
@@ -175,7 +175,7 @@ void transactionStatistics(transaction *arr, int SIZE, int &min, int &max, doubl
     count++;
     }
 
-  int temp; // Sorting the dollar array;
+  int temp; // Sorting the dollar array so that the max and min are always first and last index;
   bool SWAP;
   do {
     SWAP = false;
