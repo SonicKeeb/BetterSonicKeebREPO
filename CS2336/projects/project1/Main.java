@@ -11,6 +11,7 @@ public class Main {
     int[] flightMiles = new int[37];
     int totalMiles1 = 0, totalMiles2 = 0, totalMiles3 = 0, totalMiles4 = 0, totalMiles5 = 0, totalMiles6 = 0,
         totalMiles7 = 0, totalMiles8 = 0, totalMiles9 = 0, totalMiles10 = 0, totalMiles11 = 0, totalMiles12 = 0;
+    String[] tier = new String[12];
 
     System.out.println("Opening file input.txt.");
     inputFile = new FileInputStream("input.txt");
@@ -23,6 +24,17 @@ public class Main {
       if (memberID[0] == memberID[i]) {
         count++;
         totalMiles1 += flightMiles[i];
+        if (totalMiles1 >= 25000 && totalMiles1 < 50000) {
+          tier[0] = "Gold";
+        } else if (totalMiles1 >= 75000 && totalMiles1 < 100000) {
+          tier[0] = "Platinum";
+        } else if (totalMiles1 >= 100000 && totalMiles1 < 150000) {
+          tier[0] = "Platinum Pro";
+        } else if (totalMiles1 >= 150000) {
+          tier[0] = "Super Executive Platinum";
+        } else {
+          tier[0] = "Not high enough for a tier";
+        }
       }
       if (memberID[1] == memberID[i]) {
         count++;
@@ -79,7 +91,7 @@ public class Main {
     System.out.println("101: " + totalMiles1 + " 102: " + totalMiles2 + " 103: " + totalMiles3 + "104: " + totalMiles4
         + " 105: " + totalMiles5 + " 106: " + totalMiles6 + "107: " + totalMiles7 + " 108: " + totalMiles8 + " 109: " + totalMiles9 +
         "110: " + totalMiles10 + " 111: " + totalMiles11 + " 112: " + totalMiles12);
-
+    System.out.println("Member 101 is a " + tier[0]);
     System.out.println("Closing file input.txt");
     inputFile.close();
   }
