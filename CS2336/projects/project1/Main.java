@@ -9,11 +9,13 @@ import java.io.BufferedReader;
 
 public class Main {
   public static void displayFirst() {
+    System.out.println("Welcome to the flight members status terminal! \n");
     System.out.println("Choose your choice of query" + "\n");
     System.out.println("1. Query information through rewards members");
     System.out.println("2. What are the reward tiers?");
     System.out.println("3. Quit");
     System.out.println("\n" + "What is your choice?");
+    System.out.print("Choice: ");
   }
   public static void displaySecond() {
     System.out.println("Selected option 1: Query information through rewards members");
@@ -23,26 +25,29 @@ public class Main {
     System.out.println("4. Current reward tier(based on miles accumluated from the previous year");
     System.out.println("5. Reward tier of GIVEN prior year");
     System.out.println("6. EXIT");
+    System.out.println("*. Press any other number to go back to previous page");
   }
   public static int milesAccumulatedCurrent(String[] date, int[] memberID, int[] flightMiles,
       int[] year, int length, int accumulated) {
+    int currentYear = year[length-1];
     accumulated = 0;
-    System.out.println("What year? Put year first and then id");
+    System.out.println("\n");
+    System.out.print("Input ID to find accumulated miles for current year: ");
     Scanner input = new Scanner(System.in);
-    int yearChoice = input.nextInt();
     int ID = input.nextInt();
     for (int i = 0; i < length; ++i) {
-      if ((year[i] == yearChoice) && (memberID[i] == ID)) {
+      if ((year[i] == currentYear) && (memberID[i] == ID)) {
         accumulated += flightMiles[i];
       }
     }
-    System.out.println(accumulated);
+    System.out.print("\n");
+    System.out.println("Miles Accumulated this year: " + accumulated + "\n");
     return accumulated;
   }
   public static int totalMilesAccumulated(String[] date, int[] memberID, int[] flightMiles,
       int[] year, int length, int overall) {
     overall = 0;
-    System.out.println("Which member do you want to search, for the total accumulated miles");
+    System.out.print("Input Member ID for the total miles since joining the members program: ");
     Scanner input = new Scanner(System.in);
     int ID = input.nextInt();
     for (int i = 0; i < length; ++i) {
@@ -50,24 +55,33 @@ public class Main {
         overall += flightMiles[i];
       }
     }
-    System.out.println(overall);
+    System.out.println("\n");
+    System.out.println("Total Miles Since Joining: " + overall + "\n");
     return overall; 
   }
   public static void whatAreRewardsMembers() {
-    System.out.println("Gold: 25,000 miles. Gold passengers get special perks such as a seat to sit in during the flight.");
-    System.out.println("Platinum: 50,000 miles. Platinum passengers get complementary upgrades to padded seats.");
-    System.out.println("\t" + "* Platinum Pro – 75,000 miles. Platinum Pro is a special sub-tier of Platinum, in which the padded seats include arm rests.");
-    System.out.println("Executive Platinum: 100,000 miles. Executive Platinum passengers enjoy perks such as complementary upgrades from the cargo hold to main cabin.");
-    System.out.println("\t" + "* Super Executive Platinum – 150,000 miles. Super Executive Platinum is a special sub-tier of Executive Platinum, reserved for the most loyal passengers. To save costs, airline  management decided to eliminate the position of co-pilot, instead opting to reserve the co-pilot’s seat for Super Executive Platinum passengers.");
+    System.out.println("Gold: 25,000 miles. Gold passengers get special perks"); 
+    System.out.println("such as a seat to sit in during the flight." + "\n");
+    System.out.println("Platinum: 50,000 miles. Platinum passengers get complementary");
+    System.out.println("upgrades to padded seats." + "\n");
+    System.out.println("\t" + "* Platinum Pro – 75,000 miles. Platinum Pro is a special sub-tier");
+    System.out.println("\t" + "of Platinum, in which the padded seats include arm rests." + "\n");
+    System.out.println("Executive Platinum: 100,000 miles. Executive Platinum passengers enjoy perks");
+    System.out.println("such as complementary upgrades from the cargo hold to main cabin." + "\n");
+    System.out.println("\t" + "* Super Executive Platinum – 150,000 miles. Super Executive Platinum");
+    System.out.println("\t" + "is a special sub-tier of Executive Platinum, reserved for the most");
+    System.out.println("\t" + "loyal passengers. To save costs, airline  management decided to");
+    System.out.println("\t" + "eliminate the position of co-pilot, instead opting to reserve");
+    System.out.println("\t" + "the co-pilot’s seat for Super Executive Platinum passengers." + "\n");
   }
   public static String joinDate(String[] date, int[] memberID, int[] year, int length) {
-    System.out.println("Enter in the memberID you wish to find the join date for");
+    System.out.print("Enter in the memberID you wish to find the join date for: ");
     String creation = "";
     Scanner input = new Scanner(System.in);
     int ID = input.nextInt();
     for (int i = 0; i < length; ++i) {
       if (memberID[i] == ID) {
-        System.out.println("This is the join date " + date[i]);
+        System.out.println("Join Date: " + date[i]);
         creation += date[i];
         break;
       }
@@ -80,8 +94,11 @@ public class Main {
     int totalMiles = 0;
     System.out.println("Enter in the year and then the ID to find the tier belonging to that year");
     Scanner input = new Scanner(System.in);
+    System.out.print("Year: ");
     int time = input.nextInt();
+    System.out.print("ID: ");
     int ID = input.nextInt();
+    System.out.print("\n");
     for (int i = 0; i < length; ++i) {
       if ((year[i] == time) && (memberID[i] == ID)) {
         totalMiles += flightMiles[i];
@@ -98,7 +115,8 @@ public class Main {
         tier = "Not enough for any tier";
       }
     }
-    System.out.println("Total traveled miles during this year was " + totalMiles + " Tier: " + tier);
+    System.out.println("Total traveled miles during this year was: " + totalMiles);
+    System.out.println("Tier: " + tier + "\n");
     return tier;
   }
   public static String previousYear(String[] date, int[] memberID, int[] flightMiles, int[] year,
@@ -108,7 +126,7 @@ public class Main {
     int totalMiles = 0;
     int latestYear = 0;
     int previousYear = 0;
-    System.out.println("Enter in the ID ");
+    System.out.print("Enter in the ID: ");
     Scanner input = new Scanner(System.in);
     ID = input.nextInt();
     for (int i = length-1; i > 0; --i) {
@@ -122,14 +140,24 @@ public class Main {
       if ((year[i] == previousYear) && (memberID[i] == ID)) {
         totalMiles += flightMiles[i];
       }
+      if ((totalMiles >= 25000) && (totalMiles < 50000)) {
+        tier = "Gold";
+      } else if ((totalMiles >= 500000) && (totalMiles < 75000)) {
+        tier = "Platinum";
+      } else if ((totalMiles >= 75000) && (totalMiles < 100000)) {
+        tier = "Executive Platinum";
+      } else if (totalMiles >= 150000) {
+        tier = "Super Executive Platinum";
+      } else {
+        tier = "Not enough for any tier";
+      }
     }
-    System.out.println("Previous year miles: " + totalMiles);
+    System.out.println("Previous year tier: " + tier);
     return tier;
   }
   public static void main(String[] args) throws IOException {
     FileInputStream inputFile = null;
     Scanner scnr = null;
-    System.out.println("Opening file input.txt.");
     inputFile = new FileInputStream("input.txt");
     scnr = new Scanner(inputFile);
 
@@ -146,7 +174,6 @@ public class Main {
     inputFile = new FileInputStream("input.txt");
     scnr = new Scanner(inputFile);
     int length = counter;
-    System.out.println("Length of file: " + length);
 
     String[] date = new String[length];
     int[] memberID = new int[length];
@@ -165,8 +192,10 @@ public class Main {
     while (choice == 0) {
       displayFirst();
       choice = myChoice.nextInt();
+      System.out.print("\n");
       if (choice == 1) {
         displaySecond();
+        System.out.print("Choose your desired query: ");
         choice = myChoice.nextInt();
         if (choice == 1) {
           milesAccumulatedCurrent(date, memberID, flightMiles, year, length, accumulated);
@@ -180,17 +209,20 @@ public class Main {
           currentTier(date, memberID, flightMiles, year, length);
         } else if (choice == 6) { //This is the exit for after selecting query by id
           System.exit(1);
+        } else {
+          System.out.println("Not any of the valid choices, going back to home query");
         }
       } else if (choice == 3) { //This is the exit for first display
         System.exit(0);
       } else if (choice == 2) {
         whatAreRewardsMembers();
+      } else {
+        System.out.println("Not one of the valid choices, please choose again");
       }
 
       choice = 0;
     }
 
     scnr.close();
-    System.out.println("Closing file input.txt");
   }
 }
