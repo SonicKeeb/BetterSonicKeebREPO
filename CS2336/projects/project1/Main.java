@@ -102,7 +102,7 @@ public class Main {
     return tier;
   }
   public static String previousYear(String[] date, int[] memberID, int[] flightMiles, int[] year,
-  int length) {
+      int length) {
     String tier = "";
     int ID;
     int totalMiles = 0;
@@ -122,9 +122,9 @@ public class Main {
       if ((year[i] == previousYear) && (memberID[i] == ID)) {
         totalMiles += flightMiles[i];
       }
-  }
-  System.out.println("Previous year miles: " + totalMiles);
-  return tier;
+    }
+    System.out.println("Previous year miles: " + totalMiles);
+    return tier;
   }
   public static void main(String[] args) throws IOException {
     FileInputStream inputFile = null;
@@ -176,7 +176,7 @@ public class Main {
           joinDate(date, memberID, year, length);
         } else if (choice == 4) {
           previousYear(date, memberID, flightMiles, year, length);
-      } else if (choice == 5) {
+        } else if (choice == 5) {
           currentTier(date, memberID, flightMiles, year, length);
         } else if (choice == 6) { //This is the exit for after selecting query by id
           System.exit(1);
