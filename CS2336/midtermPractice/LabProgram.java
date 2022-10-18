@@ -27,7 +27,6 @@ public class LabProgram {
 
     Scanner scnr = new Scanner(System.in);
 
-    System.out.println("Input 4 values spaced out");
     for (int i = 0; i < 4; i++) {
       inputValue[i] = scnr.nextInt();
     }
